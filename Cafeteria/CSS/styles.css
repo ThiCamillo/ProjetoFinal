@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Oswald|Satisfy&display=swap');
+ 
+:root{
+    --cor-fundo: #505050;
+    --cor-fundo-lateral: #3d3833;
+    --cor-fundo-principal-claro: #faf3eb;
+    --cor-fundo-tabela: #8d847b;
+    --cor-fundo-linha-tabela-principal: #c7b9a9;
+    --cor-fundo-linha-tabela-secundaria: #faf3eb;
+    --cor-fonte-branco: #ffffff;
+    --cor-fonte-preto: #000000;
+    --cor-fonte-secundaria: #8d847b;
+    --cor-hover: #8d847b;
+    --cor-lateral-linha: #c7b9a9;
+    --cor-borda: #000000;
+    --cor-destaque: #e88f2a;
+    --fonte: 'Oswald', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--fonte);
+}
+
+body{
+    display: flex;
+    background-color: var(--cor-fundo);
+}
+
+/*-------------*/
+/*Lateral*/
+/*-------------*/
+
+.lateral{
+    width: 15%;
+    height: 100vh;
+    color: var(--cor-fonte-branco);
+    text-align: center;
+    position: fixed;
+    background-color: var(--cor-fundo-lateral);
+}
+
+.logo{
+    margin: 15px 0px;
+    padding: 5px 0px;
+    border-radius: 50%;
+}
+
+.lateral h1{
+    color: var(--cor-fonte-branco);
+    font-size: 2rem;
+}
+
+.lateral h4{
+    color: var(--cor-fonte-secundaria);
+}
+
+hr{
+    margin: 15px;
+    border-top: 3px solid var(--cor-lateral-linha);
+}
