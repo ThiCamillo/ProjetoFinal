@@ -1,33 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather|Oswald|Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kalam&family=Lato:wght@700&display=swap"); 
  
 :root{
-    --cor-fundo: #505050;
-    --cor-fundo-lateral: #3d3833;
-    --cor-fundo-principal-claro: #faf3eb;
-    --cor-fundo-tabela: #8d847b;
-    --cor-fundo-linha-tabela-principal: #c7b9a9;
-    --cor-fundo-linha-tabela-secundaria: #faf3eb;
-    --cor-fonte-branco: #ffffff;
-    --cor-fonte-preto: #000000;
-    --cor-fonte-secundaria: #8d847b;
-    --cor-hover: #8d847b;
-    --cor-lateral-linha: #c7b9a9;
-    --cor-borda: #000000;
-    --cor-destaque: #e88f2a;
-    --fonte: 'Oswald', sans-serif;
+    --fonte-titulo: "Lato", sans-serif; 
+    --fonte-texto: "Kalam", cursive; 
+
+    --cor-principal: #112D4E; 
+    --cor-secundaria: #3F72AF; 
+    --cor-tercearia: #DBE2EF; 
+    --cor-fonte: #F9F7F7; 
+
+    --cor-preto: #000000; 
+    --cor-fundo: linear-gradient(to bottom, var(--cor-secundaria), 70%, var(--cor-principal)); 
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    font-family: var(--fonte);
 }
 
 body{
-    display: flex;
     background-color: var(--cor-fundo);
+    color: var(--cor-fonte);
 }
 
 /*-------------*/
