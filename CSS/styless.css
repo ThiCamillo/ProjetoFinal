@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam&family=Lato:wght@700&display=swap"); 
+
+:root { 
+    --fonte-titulo: "Lato", sans-serif; 
+    --fonte-texto: "Kalam", cursive; 
+    --cor-principal: #112D4E; 
+    --cor-secundaria: #3F72AF; 
+    --cor-tercearia: #DBE2EF; 
+    --cor-fonte: #F9F7F7; 
+    --cor-preto: #000000; 
+    --cor-fundo: linear-gradient(to bottom, var(--cor-secundaria), 70%, var(--cor-principal)); 
+} 
+*{ 
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box; 
+} 
+body { 
+    background: var(--cor-fundo); 
+    color: var(--cor-fonte); 
+} 
+
+/*-----------------------------------*/
+/* Lateral                           */
+/*-----------------------------------*/
+
+.lateral {
+    width: 17%;
+    height: 100vh;
+    color: var(--cor-fonte);
+    text-align: center;
+    position: fixed;
+    background-color: var(--cor-principal);
+}
+
+.logo{
+    margin: 15px 0px;
+    padding: 5px 0px;
+    border-radius: 50%;
+}
+
+.lateral h1{
+    color: var(--cor-fonte);
+    font-size: 2.5rem;
+}
+
+.lateral h3 {
+    color: var(--cor-fonte);
+    font-size: 1.5rem;
+}
+
+hr {
+    margin: 15px;
+    border-top: 2px solid var(--cor-fonte);
+}
+
+.links {
+    display: block;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 1.5rem;
+}
+
+.links {
+    color: var(--cor-fonte);
+}
+
+.links a {
+    color: var(--cor-fonte);
+}
+.btn {
+    transition: ease-in-out .3s;            
+    cursor: pointer;
+}
+.btn:hover {
+    color: var(--cor-tercearia);
+    background-color: var(--cor-tercearia);
+}
+.btn-social:hover {
+    background: none;
+}
+
+/*----------------------------------------*/
+/* Principal                              */
+/*----------------------------------------*/
+
+.principal {
+    width: 50%;
+    height: 100vh;
+    padding-left: 50%;
+}
+/*----------------------------------------*/
+/* Receitas                               */
+/*----------------------------------------*/
+
+#receitas {
+    height: 100vh;
+}
+
+#receitas h2 {
+    color: var(--cor-fonte);
+    text-align: center;
+    height: 25vh;
+    font-size: 2.5rem;
+    padding: 30px;
+}
+
+table {
+    width: 100%;
+    height: 50vh;
+    border-collapse: collapse;
+    background-color: var(--cor-principal);
+    table-layout: fixed;
+    border: 5px solid var(--cor-principal);
+    font-size: 1.5rem;
+}
+
+thead th:nth-child(1) {
+    width: 30%;
+}
+thead th:nth-child(2) {
+    width: 60%;
+}
+thead th:nth-child(3) {
+    width: 10%;
+}
+
+thead {
+    color: var(--cor-fonte);
+    font-size: 2rem;
+}
+
+th, td {
+    padding: 5px;
+    border: 1px solid var(--cor-principal);
+}
+tbody td{
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--cor-principal);
+}
+tbody tr:nth-child(even) {
+    background-color: var(--cor-principal);
+}
