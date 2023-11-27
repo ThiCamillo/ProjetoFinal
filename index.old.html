@@ -142,3 +142,48 @@
     </main>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Controle de Finanças</title>
+    <style>
+        /* Adicione aqui o seu CSS */
+    </style>
+    <script>
+        // Adicione aqui o seu JavaScript
+    </script>
+</head>
+<body>
+    <!-- Tela de Login -->
+    <div id="login">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="loginUser" placeholder="Usuário" required minlength="3">
+            <input type="password" id="loginPassword" placeholder="Senha" required minlength="3">
+            <input type="submit" value="Entrar">
+        </form>
+        <a href="#" id="createAccount">Criar Conta</a>
+    </div>
+
+    <!-- Tela de Cadastro de novo Usuário -->
+    <div id="register" style="display: none;">
+        <h2>Cadastro de novo Usuário</h2>
+        <form id="registerForm">
+            <input type="text" id="registerName" placeholder="Nome" required minlength="3">
+            <input type="text" id="registerUser" placeholder="Usuário" required minlength="3">
+            <input type="password" id="registerPassword" placeholder="Senha" required minlength="3">
+            <input type="text" id="registerCPF" placeholder="CPF" required pattern="\d{11}">
+            <input type="email" id="registerEmail" placeholder="E-mail" required>
+            <input type="date" id="registerBirthdate" required>
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+</body>
+</html>
+<!--Este código cria duas divs, uma para o login e outra para o registro. 
+    Cada uma contém um formulário com os campos necessários. 
+    Os campos de input têm atributos required e minlength para garantir que sejam preenchidos com pelo menos 3 caracteres. 
+    O campo CPF tem um atributo pattern para garantir que apenas números sejam inseridos. 
+    O campo de e-mail usa o tipo email para garantir que um endereço de e-mail válido seja inserido. 
+    O campo de data de nascimento usa o tipo date para apresentar um calendário para o usuário selecionar a data.-->
