@@ -6,31 +6,71 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' href='../css/styless.css'>
+    <script src="./js/script.js" defer></script>
     <title>Senhor Finanças</title>
 </head>
 
 <body>
+    
     <header class="lateral">
-        <a href="#home"><img class="Logo" src="../img/logo.jpg" alt="Logo da empesa."></a> 
-        <a href="#home">
-            <h3>Gerenciador Financeiro</h3><a>
+        <a href="#home"><img class="Logo" src="../img/logo.jpg" alt="Logo da empresa."></a> 
+        <h3>Gerenciador Financeiro</h3><a>
                 <hr>
-    <main class="links">
+    <div class="links">
                     <ul>
-                        <a href="#home">
-                             <li class="btn">Receitas</li>
-                        </a>
-                        <a href="#home">
-                             <li class="btn">Despesas</li>
-                        </a>
-                        <a href="#home">
-                             <li class="btn">Relatórios</li>    
-                        </a>
-                    </ul>        
-                </section>                                          
-     </header>
+                        <a href="#receitas"><li class="btn">Receitas</li></a>
+                        <br>
+                        <a href="#despesas"><li class="btn">Despesas</li></a>
+                        <br>
+                        <a href="#relatorios"><li class="btn">Relatórios</li></a>
+                    </ul>
+     </div>
+    </header>
+<section>
+     <div class="login">
+        <h2>Login</h2>
+        <form id="login">
+            <h1>Acesso ao Senhor Finanças</h1>
+            <p>Digite seus dados para entrar no sistema ou crie sua conta<p>
+                <div class="input-grupo">
+                    <label for="nome">Login:</label>
+                    <input type="text" id="nome" name="nome" required minlength="3">
+                </div>
+                <div class="input-grupo">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required minlength="3">
+                </div>
+                    <button type="submit">Entrar</button>
+                    <p id="errorMessage" class="error-message"></p>
+            </form>
+                <p class="criar-conta-link">Criar Conta</p>
+                </div>
+            </section>
+            <section>
+                <div class="criar-conta-link">
+                    <h2>Login</h2>
+                    <form id="login">
+                        <h1>Cadastro de novo Usuário</h1>
+                        <p>Preencha as informações para criar sua conta no Senhor Finanças<p>
+                        <form action="">
+                            <div>
+                                <label for="nome">Login:</label>
+                                <textarea senha="nome" id="nome" ></textarea>
+                            </div>
+                            <div>
+                                <label for="senha">Senha:</label>
+                                <textarea  senha="senha" id="senha" ></textarea>
+                            </div>
+                            <div class="div-botao">
+                                <button class="botao" type="submit">Entrar</button>
+                            </div>
+                            <div>
+                                <label for="criarConta">Criar conta</label>
+                            </div>
+                        </section>
 
-    <main class="principal">
+
+    <div class="principal">
         <section id="receitas">
             <h2>Receitas</h2>
             <table>
@@ -47,7 +87,7 @@
         </section>  
 
         
-    </main> 
+    </div> 
 </body>
 
 </html>
