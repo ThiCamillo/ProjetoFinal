@@ -9,15 +9,19 @@
     --cor-fonte: #F9F7F7; 
     --cor-preto: #000000; 
     --cor-fundo: linear-gradient(to bottom, var(--cor-secundaria), 70%, var(--cor-principal)); 
-} 
+}
+
 *{ 
     padding: 0; 
     margin: 0; 
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    text-decoration: none; 
 } 
+
 body { 
     background: var(--cor-fundo); 
-    color: var(--cor-fonte); 
+    color: var(--cor-fonte);
+    display: flex; 
 } 
 
 /*-----------------------------------*/
@@ -25,7 +29,7 @@ body {
 /*-----------------------------------*/
 
 .lateral {
-    width: 17%;
+    width: 15%;
     height: 100vh;
     color: var(--cor-fonte);
     text-align: center;
@@ -34,9 +38,10 @@ body {
 }
 
 .logo{
-    margin: 15px 0px;
+    margin: 15px 5px;
     padding: 5px 0px;
     border-radius: 50%;
+    width: 95%;
 }
 
 .lateral h1{
@@ -51,7 +56,7 @@ body {
 }   
 
 hr {
-    margin: 30px;
+    margin: 10px;
     border-top: 3px solid var(--cor-fonte);
     
 }
@@ -59,17 +64,19 @@ hr {
 .links {
     display: block;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 90px;
     font-size: 1.5rem;
     font-family: var(--fonte-texto);
 }
 
-.links {
+.links li{
     color: var(--cor-fonte);
+    padding: 15px 0px;
 }
 
-.links a {
+a {
     color: var(--cor-fonte);
+    text-decoration: none;
 }
 
 .btn {
@@ -89,7 +96,7 @@ hr {
 /*----------------------------------------*/
 
 .principal {
-    width: 50%;
+    width: 150%;
     height: 100vh;
     padding-left: 50%;
 }
