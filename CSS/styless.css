@@ -29,7 +29,7 @@ body {
 /*-----------------------------------*/
 
 .lateral {
-    width: 15%;
+    /* width: 15%; */
     height: 100vh;
     color: var(--cor-fonte);
     text-align: center;
@@ -44,15 +44,15 @@ body {
     width: 95%;
 }
 
-.lateral h1{
+/* .lateral h1{
     color: var(--cor-fonte);
     font-size: 2.5rem;  
-}
+} */
 
-.lateral h3 {
+.lateral h3{
     color: var(--cor-fonte);
     font-size: 1.5rem;
-    height: 10vh;
+    /* height: 10vh; */
 }   
 
 hr {
