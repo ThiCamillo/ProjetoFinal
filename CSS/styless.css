@@ -3,9 +3,11 @@
 :root { 
     --fonte-titulo: "Lato", sans-serif; 
     --fonte-texto: "Kalam", cursive; 
+   
     --cor-principal: #112D4E; 
     --cor-secundaria: #3F72AF; 
     --cor-tercearia: #DBE2EF; 
+    
     --cor-fonte: #F9F7F7; 
     --cor-preto: #000000; 
     --cor-fundo: linear-gradient(to bottom, var(--cor-secundaria), 70%, var(--cor-principal)); 
@@ -31,7 +33,7 @@ body {
 .lateral {
     /* width: 15%; */
     height: 100vh;
-    color: var(--cor-fonte);
+    /* color: var(--cor-fonte); */
     text-align: center;
     position: fixed;
     background-color: var(--cor-principal);
@@ -70,7 +72,7 @@ hr {
 }
 
 .links li{
-    color: var(--cor-fonte);
+    /* color: var(--cor-fonte); */
     padding: 15px 0px;
 }
 
@@ -84,12 +86,10 @@ a {
     cursor: pointer;
 }
 .btn:hover {
-    color: var(--cor-tercearia);
+    /* color: var(--cor-tercearia); */
     background-color: var(--cor-tercearia);
 }
-.btn-social:hover {
-    background: none;
-}
+
 
 /*----------------------------------------*/
 /* Principal                              */
@@ -98,39 +98,26 @@ a {
 .principal {
     width: 150%;
     height: 100vh;
-    padding-left: 50%;
+    padding-left: 260px;
 }
 
 /*----------------------------------------*/
 /* Home                                   */
 /*----------------------------------------*/
 
-/*.tabela{
+.tabela{
     display: flex;
-    justify-content: center;
-    height: 50vh;
-}*/
+    flex-direction: column;
+    justify-items: center;
+    /* height: 50vh; */
+    margin: 5px;
+}
 
-/*.tabela {
-    margin: 20px;
-    border-radius: 50%;
-    padding-left: 50%;
-}*/
-
-/*.tabela {
-    display: flex;
-    height: 70vh;
-}*/
-
-/*.tabela {
-    margin: 5px 0px;
-    width: 100%;
-}*/
 /*----------------------------------------*/
 /* Receitas                               */
 /*----------------------------------------*/
 
-#receitas {
+/* #receitas {
     height: 100vh;
 }
 
@@ -140,9 +127,12 @@ a {
     height: 15vh;
     font-size: 2.5rem;
     padding: 30px;
-}
+} */
 
-#cardapio {
+h2{
+    align-self: center;
+}
+/* #cardapio {
     height: 50vh;
 }
 
@@ -152,43 +142,65 @@ a {
     height: 20vh;
     font-size: 2.5rem;
     padding: 30px;
-}
+} */
 
 table {
-    
     height: 10vh;
     border-collapse: 0; 
     background-color: var(--cor-principal);
     table-layout: fixed;
     border: 2px solid var(--cor-principal);
-    font-size: 2.5rem;   
+    font-size: 1rem;   
 }
 thead th:nth-child(1) {
-    width: 30%;
+    width: 10%;
 }
 thead th:nth-child(2) {
-    width: 60%;
+    width: 40%;
 }
 thead th:nth-child(3) {
     width: 10%;
+    text-wrap: nowrap;
+}
+
+thead th:nth-child(4) {
+    width: 10%;
+    text-wrap: nowrap;
+}
+
+thead th:nth-child(5) {
+    width: 5%;
+    text-wrap: nowrap;
+}
+
+thead th:nth-child(6) {
+    width: 30%;
+    text-wrap: nowrap;
 }
 thead {
-    color: var(--cor-preto);
-    font-size: 2rem;
+    color: var(--cor-fonte-branco);
+    text-wrap: nowrap;
 }
 th, td {
     padding: 1px;
     border: 1px solid var(--cor-fundo);
 }
 tbody td{
+    color: var(--cor-preto);
     text-align: center;
 }
 
 tbody tr:nth-child(odd) {
-    background-color: var(--cor-fundo-linha-tabela-principal);
+    background-color: var(--cor-tercearia);
 }
 tbody tr:nth-child(even) {
-    background-color: var(--cor-fundo-linha-tabela-secundaria);
+    background-color: var(--cor-fonte);
+}
+
+tfoot{
+    color: var(--cor-fonte-branco);
+    font-size: 2rem;
+    text-align: center;
 }
 
 
