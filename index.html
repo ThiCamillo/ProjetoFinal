@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='./CSS/styless.css'>
+    <script src="./js/script.js" defer></script>
+    <title>Senhor Finanças</title>
+</head>
+
+<body>
+    <!--Tela de login-->
+    <div class="container">
+        <div class="titulo">
+            <h1>Sistema de Controle de Finanças</h1>
+            <h4>Gerir bem as finanças garantem um dia a dia mais tranquilo!</h4>
+        </div>
+        <form action="" id="formulario">
+            <div class="inputs">
+                <label for="nome">Login:</label>
+                <input class="input" type="text" id="login" name="login" required minlength="3">
+            </div>
+            <div class="inputs">
+                <label for="senha">Senha:</label>
+                <input class="input" type="password" id="senha" name="senha" required minlength="3">
+            </div>
+            <button class="botao" type="submit">Entrar</button>
+            <p id="errorMessage" class="error-message"></p>
+            <a href="./modules/usuario/cadastro.html">Criar Conta</a>
+        </form>
+    </div>
+    <footer>
+        <p>Desenvolvido por Jacqueline e Thiago</p>
+    </footer>
+</body>
+
+</html>
