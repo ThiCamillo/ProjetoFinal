@@ -13,10 +13,11 @@
     --cor-fundo: linear-gradient(to bottom, var(--cor-secundaria), 70%, var(--cor-principal)); 
 }
 
-*{
-    padding: 0;
+*{ 
+    padding: 0; 
     margin: 0; 
     box-sizing: border-box;
+    text-decoration: none; 
 } 
 
 aside {

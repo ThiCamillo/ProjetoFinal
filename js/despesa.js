@@ -1,167 +1,105 @@
+const buscar = document.querySelector('#buscar');
 
-// DESPESA //
-const form = document.querySelector('#formulario');
-const limpar = document.querySelector('#limpar');
+buscar.addEventListener('click', (evento) => {
+    evento.preventDefault();
+    buscarDespesas();
+})
 
-let despesa = {};
-
-async function listarDespesas(){
-    let options = {
-        method: "GET",
-        Headers: {"Content-type": "application/json"}
-    };
-    const listaDespesas = await fetch('http://localhost:8080/senhor-financas/rest/despesa/listar', options);
+async function buscarDespesas() {
+    const idUsuario = sessionStorage.getItem('idUsuario');
+    const listaDespesas = await fetch('http://localhost:8080/senhor-financas/rest/despesa/listar/' + idUsuario);
     const listaDespesasJson = await listaDespesas.json();
-    if(listaDespesasJson.length != 0){
-        preencherTabela(listaDespesasJson);
-    }else{
-        alert("Houve um problema ao listar as despesas.")
+    if (listaDespesasJson.length != 0) {
+        const totalFooter = calcularFooter(listaDespesasJson);
+        preencherTabela(listaDespesasJson, totalFooter);
+    } else {
+        alert("Houve um problema na busca das despesas.");
     }
 }
-listarDespesas();
 
-function preencherTabela(dados){
+function preencherTabela(listaDespesasJson, totalFooter) {
     let tbody = document.getElementById('tbody');
-    
+    const tfoot = document.getElementById('tfoot');
+
     tbody.innerText = '';
-    for(let i = 0; i < dados.length; i++){
+    tfoot.removeChild(tfoot.firstChild);
+    for (let i = 0; i < listaDespesasJson.length; i++) {
         let tr = tbody.insertRow();
-        let td_idDespesa = tr.insertCell();
+        let td_id = tr.insertCell();
         let td_descricao = tr.insertCell();
         let td_dataVencimento = tr.insertCell();
         let td_dataPagamento = tr.insertCell();
         let td_valor = tr.insertCell();
         let td_acoes = tr.insertCell();
 
-        td_idDespesa.innerText = dados[i].idDespesa;
-        td_descricao.innerText = dados[i].descricao;
-        td_dataVencimento.innerText = formatarData(dados[i].dataVencimento);
-        td_dataPagamento.innerText = formatarData(dados[i].dataPagamento);
-        td_valor.innerText = dados[i].valor;
-        
+        td_id.innerText = listaDespesasJson[i].idDespesa;
+        td_descricao.innerText = listaDespesasJson[i].descricao;
+        td_dataVencimento.innerText = formatarData(listaDespesasJson[i].dataVencimento);
+        if (listaDespesasJson[i].dataPagamento != null) {
+            td_dataPagamento.innerText = formatarData(listaDespesasJson[i].dataPagamento);
+        } else {
+            td_dataPagamento.innerText = null;
+        }
+        td_valor.innerText = listaDespesasJson[i].valor;
+
         let editar = document.createElement('button');
         editar.textContent = 'Editar';
-        editar.style.height = '30px';
-        editar.style.width = '100px';
-        editar.style.margin = '5px';
-        editar.style.padding = '2px';
-        editar.setAttribute('onclick', 'atualizarDespesa('+JSON.stringify(dados[i])+')');
+        editar.setAttribute('onclick', 'editarDespesa(' + JSON.stringify(listaDespesasJson[i]) + ')');
+        td_acoes.className = 'botao'
         td_acoes.appendChild(editar);
 
         let excluir = document.createElement('button');
         excluir.textContent = 'Excluir';
-        excluir.style.height = '30px';
-        excluir.style.width = '100px';
-        excluir.style.margin = '5px';
-        excluir.style.padding = '2px';
-        excluir.setAttribute('onclick', 'excluirDespesa('+JSON.stringify(dados[i])+')');
+        excluir.setAttribute('onclick', 'excluirDespesa(' + JSON.stringify(listaDespesasJson[i]) + ')');
         td_acoes.appendChild(excluir);
-        
+
     }
+
+    const tr = tfoot.insertRow()
+    const td = tr.insertCell()
+    td.innerText = `Total - ${totalFooter}`;
+    td.setAttribute('colspan', 6);
 }
 
-function formatarData(data){
+function calcularFooter(despesas) {
+    let total = 0
+    despesas.forEach(despesa => {
+        total = total + despesa.valor
+    })
+    return total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+}
+
+function formatarData(data) {
     let dataFormatada = new Date(data),
-    dia  = dataFormatada.getDate().toString().padStart(2,'0'),
-    mes  = (dataFormatada.getMonth()+1).toString().padStart(2,'0'),
-    ano  = dataFormatada.getFullYear();
-    return dia+"/"+mes+"/"+ano;
+        dia = dataFormatada.getDate().toString().padStart(2, '0'),
+        mes = (dataFormatada.getMonth() + 1).toString().padStart(2, '0'),
+        ano = dataFormatada.getFullYear();
+    return dia + "/" + mes + "/" + ano;
 }
 
-//function limpar(){
-//    form.reset();
-//}
-
-limpar.addEventListener('click', (evento) => {
-    evento.preventDefault();
-    despesa = {};
-    form.reset();
-})
-
-async function excluirDespesa(dados){
+async function excluirDespesa(despesas) {
     let options = {
         method: "DELETE",
-        headers: {"Content-type": "application/json"},
+        headers: { "Content-type": "application/json" },
         body: JSON.stringify({
-            iddespesa: dados.iddespesa,
-            descricao: dados.descricao,
-            valor: dados.valor,
-            datavencimento: dados.datavencimento,
-            datapagamento: dados.datapagamento 
+            idDespesa: despesas.idDespesa,
+            descricao: despesas.descricao,
+            dataVencimento: despesas.dataVencimento,
+            dataPagamento: despesas.dataPagamento,
+            valor: despesas.valor,
         })
     };
     const resultado = await fetch('http://localhost:8080/senhor-financas/rest/despesa/excluir', options);
-    if(resultado.ok == true){
-        alert("Exclusão realizada com sucesso.");
-        despesa = {};
-        listarDespesas();
+    if (resultado.ok == true) {
+        alert("Despesa excluida.");
+        buscarDespesas();
     } else {
-        alert("Houve um problema na exclusão da despesa.");
+        alert("Houve um problema na exclusão da Despesa.");
     }
 }
 
-form.addEventListener('submit', (evento) => {
-    evento.preventDefault();
-    if(despesa.iddespesa != undefined){
-       atualizarDespesa();
-    } else {
-       cadastrarDespesa();
-    }
-})
-
-async function cadastrarDespesa(){
-    let options = {
-        method: "POST",
-        headers: {"Content-type": "application/json"},
-        body: JSON.stringify({
-            id: 0,
-            descricao: document.querySelector('#descricao').value,
-            valor: document.querySelector('#valor').value,
-            datavencimento: document.querySelector('#datavencimento').value,
-            datapagamento: document.querySelector('#datapagamento').value 
-        })
-    };
-    const resultado = await fetch('http://localhost:8080/senhor-financas/rest/despesa/cadastrar', options);
-    despesa = await resultado.json();
-    if(despesa.iddespesa != 0){
-        alert("Cadastro realizado com sucesso.");
-        despesa = {};
-        listarDespesas();
-    } else {
-        alert("Houve um problema no cadastro da despesa.");
-    }
-    form.reset();
+async function editarDespesa(despesas) {
+    sessionStorage.setItem('idDespesa', despesas.idDespesa);
+    sessionStorage.setItem('dadosDespesa', JSON.stringify(despesas));
+    window.location.href = 'editarDespesa.html';
 }
-//parei aqui
-async function atualizarPessoa(){
-    let options = {
-        method: "PUT",
-        headers: {"Content-type": "application/json"},
-        body: JSON.stringify({
-            id: pessoa.id,
-            nome: document.querySelector('#nome').value,
-            cpf: document.querySelector('#cpf').value,
-            email: document.querySelector('#email').value,
-            dataNascimento: document.querySelector('#nascimento').value 
-        })
-    };
-    const resultado = await fetch('http://localhost:8080/pessoa/rest/pessoa/atualizar', options);
-    if(resultado.ok == true){
-        alert("Atualização realizada com sucesso.");
-        pessoa = {};
-        buscarPessoas();
-    } else {
-        alert("Houve um problema na atualização da pessoa.");
-    }
-    form.reset();
-}
-
-async function editarPessoa(dados){
-    pessoa.id = dados.id;
-    document.querySelector('#nome').value = dados.nome;
-    document.querySelector('#cpf').value = dados.cpf;
-    document.querySelector('#email').value = dados.email; 
-    document.querySelector('#nascimento').value = dados.dataNascimento;
-}
-
-
