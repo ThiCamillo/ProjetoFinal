@@ -26,18 +26,18 @@ function preencherTabela(dados){
     tbody.innerText = '';
     for(let i = 0; i < dados.length; i++){
         let tr = tbody.insertRow();
-        let td_iddespesa = tr.insertCell();
+        let td_idDespesa = tr.insertCell();
         let td_descricao = tr.insertCell();
-        let td_datavencimento = tr.insertCell();
-        let td_datapagamento = tr.insertCell();
+        let td_dataVencimento = tr.insertCell();
+        let td_dataPagamento = tr.insertCell();
         let td_valor = tr.insertCell();
         let td_acoes = tr.insertCell();
 
-        td_iddespesa.innerText = dados[i].iddespesa;
+        td_idDespesa.innerText = dados[i].idDespesa;
         td_descricao.innerText = dados[i].descricao;
-        td_datavencimento.innerText = dados[i].datavencimento;
-        td_datapagamento.innerText = dados[i].datapagamento;
-        td_valor.innerText = formatarData(dados[i].dataNascimento);
+        td_dataVencimento.innerText = formatarData(dados[i].dataVencimento);
+        td_dataPagamento.innerText = formatarData(dados[i].dataPagamento);
+        td_valor.innerText = dados[i].valor;
         
         let editar = document.createElement('button');
         editar.textContent = 'Editar';
