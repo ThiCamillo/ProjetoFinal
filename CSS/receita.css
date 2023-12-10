@@ -17,273 +17,153 @@
     padding: 0; 
     margin: 0; 
     box-sizing: border-box;
-    text-decoration: none; 
 } 
 
-body { 
-    background: var(--cor-fundo); 
-    color: var(--cor-fonte);
-    display: flex; 
-} 
+body {
+    background: var(--cor-fundo);
+    min-height: 100vh;
+}
 
-/*-----------------------------------*/
-/* Lateral                           */
-/*-----------------------------------*/
-
-.lateral {
-    /* width: 15%; */
+aside {
     height: 100vh;
-    /* color: var(--cor-fonte); */
+    width: 20%;
+    background: var(--cor-principal);
+    align-items: center;
     text-align: center;
+    padding: 50px 0px;
     position: fixed;
-    background-color: var(--cor-principal);
+    border-right: solid 2px black;
 }
 
-.logo{
-    margin: 15px 5px;
-    padding: 5px 0px;
-    border-radius: 50%;
-    width: 95%;
+.lateral h2 {
+    padding: 0px 0px 20px 0px;
+    margin: 40px 20px;
+    border-bottom: 4px solid #fff;
 }
 
-/* .lateral h1{
+.lateral a {
+    text-decoration: none;
     color: var(--cor-fonte);
-    font-size: 2.5rem;  
-} */
+}
 
-.lateral h3{
-    color: var(--cor-fonte);
-    font-size: 1.5rem;
-    /* height: 10vh; */
-}   
+.links li:hover {
+    cursor: pointer;
+    background-color: rgba(222, 222, 222, 0.2);
+    transition: ease-in-out .3s;
+}
 
-hr {
-    margin: 10px;
-    border-top: 3px solid var(--cor-fonte);
+ul {
+    padding: 10px 0px;
     
 }
 
-.links {
-    display: block;
-    text-align: center;
-    padding-top: 90px;
-    font-size: 1.5rem;
+li {
+    padding: 20px 0px 15px 0px;
+    font-size: 18px;
     font-family: var(--fonte-texto);
 }
 
-.links li{
-    /* color: var(--cor-fonte); */
-    padding: 15px 0px;
-}
-
-a {
-    color: var(--cor-fonte);
-    text-decoration: none;
-}
-
-.btn {
-    transition: ease-in-out .3s;            
-    cursor: pointer;
-}
-.btn:hover {
-    /* color: var(--cor-tercearia); */
-    background-color: var(--cor-tercearia);
-}
-
-
-/*----------------------------------------*/
-/* Principal                              */
-/*----------------------------------------*/
-
-.principal {
-    width: 150%;
-    height: 100vh;
-    padding-left: 260px;
-}
-
-/*----------------------------------------*/
-/* Home                                   */
-/*----------------------------------------*/
-
-.tabela{
+.div-tabela {
+    padding: 20px 20px 0px 20px;
     display: flex;
     flex-direction: column;
-    justify-items: center;
-    /* height: 50vh; */
-    margin: 5px;
+    text-align: center;
+    font-family: var(--fonte-titulo);
+    min-height: 95vh;
+    
 }
 
-/*----------------------------------------*/
-/* Receitas                               */
-/*----------------------------------------*/
-
-/* #receitas {
-    height: 100vh;
-}
-
-#receitas h2 {
+.div-tabela h2{
     color: var(--cor-fonte);
-    text-align: center;
-    height: 15vh;
-    font-size: 2.5rem;
-    padding: 30px;
-} */
-
-h2{
-    align-self: center;
-}
-/* #cardapio {
-    height: 50vh;
+    font-size: 28px;
 }
 
-#cardapio h2 {
-    color: var(--cor-destaque);
-    text-align: center;
-    height: 20vh;
-    font-size: 2.5rem;
-    padding: 30px;
-} */
-
-table {
-    height: 10vh;
-    border-collapse: 0; 
-    background-color: var(--cor-principal);
-    table-layout: fixed;
-    border: 2px solid var(--cor-principal);
-    font-size: 1rem;   
-}
-thead th:nth-child(1) {
-    width: 10%;
-}
-thead th:nth-child(2) {
-    width: 40%;
-}
-thead th:nth-child(3) {
-    width: 10%;
-    text-wrap: nowrap;
+.tabela {
+    margin-top: 80px;
+    border-collapse: collapse;
 }
 
-thead th:nth-child(4) {
-    width: 10%;
-    text-wrap: nowrap;
+.tabela thead {
+    background: var(--cor-principal);
+    color: var(--cor-fonte);
+    font-family: var(--fonte-titulo);
 }
 
-thead th:nth-child(5) {
-    width: 5%;
-    text-wrap: nowrap;
+.tabela th {
+    padding: 8px;
 }
 
-thead th:nth-child(6) {
-    width: 30%;
-    text-wrap: nowrap;
-}
-thead {
-    color: var(--cor-fonte-branco);
-    text-wrap: nowrap;
-}
-th, td {
-    padding: 1px;
-    border: 1px solid var(--cor-fundo);
-}
-tbody td{
-    color: var(--cor-preto);
-    text-align: center;
+.tabela tbody td {
+    padding: 10px;
+    font-family: var(--fonte-texto);
+    font-weight: bold;
 }
 
 tbody tr:nth-child(odd) {
     background-color: var(--cor-tercearia);
 }
+
 tbody tr:nth-child(even) {
     background-color: var(--cor-fonte);
 }
 
-tfoot{
-    color: var(--cor-fonte-branco);
-    font-size: 2rem;
-    text-align: center;
-}
-
-
-/*----------------------------------------*/
-/* TELA LOGIN                             */
-/*----------------------------------------*/
-
-#login {
-    height: 100vh;
-}
-
-#login h1 {
-    color: var(--cor-fonte);
-    text-align: center;
-    height: 25vh;
-    font-size: 3.5rem;
-    padding: 60px;
-    font-family: var(--fonte-titulo);
-}
-
-#login p {
-    color: var(--cor-fonte);
-    margin: 1px;
-    height: 10vh;
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 0.1%;
-    font-family: var(--fonte-texto);
-}
-
-form div {
-    display: flex;
-    flex-direction: column;
-    margin: 1px 30%;
-}
-
-form label {
-    display: block;
-    margin-left: 80px;
-    font-size: 1.5rem;
-    color: var(--cor-fonte-branco);
-    font-family: var(--fonte-texto);
-}
-
-.imput {
-    margin: 50px;
-    border-radius: 50px;
-    padding: 5px;
-    height: 48px;
-    font-size: 1.5rem;
-
-}
-textarea {
-    margin: 10px;
-    border: 2px solid var(--cor-preto);
-    border-radius: 10px;
-    padding: 1px 1px;
-    height: 45px;
-    font-size: 1.5rem;
-    width: 70%;
-}
-
-.div-botao {
-    display: flex;
-    align-items: center;
-    padding: 1px 1px;
-    height: 45px;
-    margin: 30px;
-}
-
 .botao {
-    border: 2px solid var(--cor-preto);
-    background-color: var(--cor-fonte);
-    margin-top: 5px;
-    border-radius: 10px;
-    padding: 10px;
-    font-weight: bold;
-    color: var(--cor-preto);
-    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.botao button {
+    padding: 5px;
     width: 30%;
+    border-radius: 7px;
+    border: 2px solid var(--cor-preto);
+    font-family: var(--fonte-texto);
+    font-weight: bold;
+}
+
+.tabela tfoot td{
+    background: var(--cor-principal);
+    color: var(--cor-fonte);
+    padding: 8px;
+}
+
+.botoes {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.botoes button {
+    padding: 5px;
+    width: 10%;
+    border-radius: 7px;
+    border: 2px solid var(--cor-preto);
+    font-family: var(--fonte-texto);
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--cor-tercearia);
+}
+
+span {
+    color: var(--cor-fonte);
     font-family: var(--fonte-texto);
 }
 
-.botao:hover {
-    background-color: var(--cor-secundaria);
+a {
+    color: var(--cor-preto);
+    text-decoration: none;
+}
+
+.div-span {
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    margin-left: 20%;
 }
