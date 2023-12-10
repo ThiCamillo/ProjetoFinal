@@ -1,104 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie-edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../../CSS/styless.css">
-<script src="../../js/script.js" defer></script>
-<title>Senhor Finanças</title>
-</head>
-<body>
-    <!-- a lateral so tem nas outras paginas -->
-    <header class="lateral">
-        <a href="#home"><img class="logo" src="../../img/logo.jpg" alt="Logo da empresa."></a>
-        <a href="#home"><h3>Gerenciador Financeiro</h3><a>
-        <hr>
-        <section class="links">
-            <ul>
-                <a href="../receita/receitas.html"><li class="btn">Receitas</li></a>
-                <br>
-                <a href="../despesa/despesas.html"><li class="btn">Despesas</li></a>
-                <br>
-                <a href="../relatorio/relatorios.html"><li class="btn">Relatórios</li></a>
-                <br>
-                <a href="../../index.html"><li class="btn">Sair</li></a>
-            </ul>
-        </section>
-    </header>
-    <main class="principal">
-                
-        <section class="tabela">
 
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='../../CSS/relatorios.css'>
+    <!-- <script src="../../js/" defer></script> -->
+    <title>Senhor Finanças</title>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="lateral">
+            <a href="../receita/receita.html"><img class="logo" src="../../img/logo.jpg"></a>
+            <a href="../receita/receita.html">
+                <h2>Gerenciador Financeiro</h2>
+            </a>
+            <ul class="links">
+                <li><a href="../receita/receita.html" class="link">Receitas</a></li>
+                <li><a href="../despesa/despesa.html" class="link">Despesas</a></li>
+                <li><a href="../relatorio/relatorios.html" class="link">Relatórios</a></li>
+            </ul>
+        </aside>
+        <form action="" id="formulario">
             <h2>Relatórios</h2>
-            <br>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Descrição</th>
-                        <th>Data Vencimento</th>
-                        <th>Data Pagamento</th>
-                        <th>Valor</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Preto</td>
-                        <td>Café feito com grãos arábicos do tipo acaiá</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                    </tr>
-                    <tr>
-                        <td>Café Preto</td>
-                        <td>Café feito com grãos arábicos do tipo acaiá</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                    </tr>
-                    <tr>
-                        <td>Café Preto</td>
-                        <td>Café feito com grãos arábicos do tipo acaiá</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                    </tr>
-                    <tr>
-                        <td>Café Preto</td>
-                        <td>Café feito com grãos arábicos do tipo acaiá</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                    </tr>
-                    <tr>
-                        <td>Café Preto</td>
-                        <td>Café feito com grãos arábicos do tipo acaiá</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                    </tr>
-                    <tr>
-                        <td>Café Preto</td>
-                        <td>Café feito com grãos arábicos do tipo acaiá</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                        <td>5,00</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <td colspan="5">Total - R$ </td>
-                </tfoot>
-            </table>
-        </section>
-     
-    </main>
+            <div class="input-botao">
+                <div class="input-geral">
+                    <label for="ano">Ano:</label>
+                    <input class="input" type="number" name="ano" id="ano" required minlength="4">
+                </div>
+                <button class="botao" id="botao" type="submit">Gerar</button>
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>
