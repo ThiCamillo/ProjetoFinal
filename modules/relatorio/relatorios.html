@@ -6,14 +6,13 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' href='../../CSS/relatorios.css'>
-    <!-- <script src="../../js/" defer></script> -->
     <title>Senhor Finanças</title>
 </head>
 
 <body>
     <div class="container">
         <aside class="lateral">
-            <a href="../receita/receita.html"><img class="logo" src="../../img/logo.jpg"></a>
+            <a href="../../index.html"><img class="logo" src="../../img/logo.jpg"></a>
             <a href="../receita/receita.html">
                 <h2>Gerenciador Financeiro</h2>
             </a>
@@ -32,8 +31,14 @@
                 </div>
                 <button class="botao" id="botao" type="submit">Gerar</button>
             </div>
+            <div class="relatorio">
+                <canvas id="grafico"></canvas>
+            </div>
         </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../js/relatorios.js" defer></script>
+
 </body>
 
 </html>
