@@ -26,7 +26,7 @@ async function editarReceita(){
     const resultado = await fetch('http://localhost:8080/senhor-financas/rest/receita/atualizar', options);
     if(resultado.ok == true){
         alert("Receita atualizada!");
-        window.location.href = './modules/receita/receita.html';
+        window.location.href = 'receita.html';
     } else {
         alert("Falha na atualização.");
         form.reset();

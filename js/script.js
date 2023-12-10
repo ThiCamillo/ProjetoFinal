@@ -21,7 +21,7 @@ async function logarUsuario() {
     const usuarioLogado = await resultado.json();
     if (usuarioLogado.idUsuario != 0) {
         sessionStorage.setItem('idUsuario', usuarioLogado.idUsuario.toString());
-        window.location.href = './modules/receita/receita.html';
+        window.location.href = 'receita.html';
     } else {
         alert("Login ou Senha incorretos.");
         form.reset();
