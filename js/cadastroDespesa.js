@@ -22,7 +22,7 @@ async function cadastrarDespesa() {
     const despesa = await resultado.json();
     if(despesa.idDespesa != 0){
         alert("Despesa cadastrada com sucesso!");
-        window.location.href = '../despesa/despesa.html';
+        window.location.href = './modules/despesa/despesa.html';
     } else {
         alert("Falha no cadastro da despesa");
         form.reset();

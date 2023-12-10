@@ -101,5 +101,5 @@ async function excluirDespesa(despesas) {
 async function editarDespesa(despesas) {
     sessionStorage.setItem('idDespesa', despesas.idDespesa);
     sessionStorage.setItem('dadosDespesa', JSON.stringify(despesas));
-    window.location.href = 'editarDespesa.html';
+    window.location.href = './modules/despesa/editarDespesa.html';
 }

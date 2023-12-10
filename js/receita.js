@@ -94,5 +94,5 @@ async function excluirReceita(receitas) {
 async function editarReceita(receitas) {
     sessionStorage.setItem('idReceita', receitas.idReceita);
     sessionStorage.setItem('dadosReceita', JSON.stringify(receitas));
-    window.location.href = 'editarReceita.html';
+    window.location.href = './modules/receita/editarReceita.html';
 }

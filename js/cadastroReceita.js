@@ -21,7 +21,7 @@ async function cadastrarReceita() {
     const receita = await resultado.json();
     if(receita.idReceita != 0){
         alert("Receita cadastrada com sucesso!");
-        window.location.href = 'receita.html';
+        window.location.href = './modules/receita/receita.html';
     } else {
         alert("Falha no cadastro da receita");
         form.reset();

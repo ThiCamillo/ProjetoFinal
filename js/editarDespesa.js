@@ -28,7 +28,7 @@ async function editarDespesa(){
     const resultado = await fetch('http://localhost:8080/senhor-financas/rest/despesa/atualizar', options);
     if(resultado.ok == true){
         alert("Despesa atualizada!");
-        window.location.href = 'despesa.html';
+        window.location.href = './modules/despesa/despesa.html';
     } else {
         alert("Falha na atualização.");
         form.reset();
