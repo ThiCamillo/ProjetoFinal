@@ -1,4 +1,5 @@
 // Configuração do gráfico usando Chart.js
+
 const ctx = document.getElementById('grafico').getContext('2d');
 const myChart = new Chart(ctx, {
   type: 'bar',
