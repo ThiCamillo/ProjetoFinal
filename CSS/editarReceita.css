@@ -18,7 +18,12 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+.logo{
+    margin: 15px 5px;
+    padding: 5px 0px;
+    border-radius: 50%;
+    width: 95%;
+}
 aside {
     height: 100vh;
     width: 20%;
