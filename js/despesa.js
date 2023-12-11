@@ -57,7 +57,7 @@ function preencherTabela(listaDespesasJson, totalFooter) {
 
     const tr = tfoot.insertRow()
     const td = tr.insertCell()
-    td.innerText = `Total - ${totalFooter}`;
+    td.innerText = `Total : ${totalFooter}`;
     td.setAttribute('colspan', 6);
 }
 

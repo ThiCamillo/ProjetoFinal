@@ -27,6 +27,7 @@ async function editarReceita(){
     if(resultado.ok == true){
         alert("Receita atualizada!");
         window.location.href = 'receita.html';
+        // buscarReceitas();
     } else {
         alert("Falha na atualização.");
         form.reset();

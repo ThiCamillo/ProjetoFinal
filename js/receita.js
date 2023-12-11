@@ -51,7 +51,7 @@ function preencherTabela(listaReceitasJson, total) {
 
     const tr = tfoot.insertRow()
     const td = tr.insertCell()
-    td.innerText = `Total - ${total}`;
+    td.innerText = `Total : ${total}`;
     td.setAttribute('colspan', 5);
 }
 
